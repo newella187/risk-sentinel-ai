@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Risk Sentinel AI</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Risk Sentinel navigation">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 48 56" role="img">
+              <path d="M24 3 43 11v14c0 13.5-8 23.2-19 28C13 48.2 5 38.5 5 25V11L24 3Z" />
+              <path d="M24 9 37 14.4v10.8c0 9.8-5.3 17-13 21.2-7.7-4.2-13-11.4-13-21.2V14.4L24 9Z" />
+              <polyline points="13 33 20 25 26 29 35 18" />
+              <circle cx="20" cy="25" r="2.3" />
+              <circle cx="26" cy="29" r="2.3" />
+              <circle cx="35" cy="18" r="2.3" />
+            </svg>
+          </div>
+          <div>
+            <strong>Risk Sentinel AI</strong>
+            <span>Monitor. Assess. Act.</span>
+          </div>
+        </div>
+
+        <nav class="nav-list">
+          <a href="#search" class="active">Search</a>
+          <a href="#summary">Summary</a>
+          <a href="#insights">Insights</a>
+          <a href="#register">Register</a>
+          <a href="#dashboard">Dashboard</a>
+          <a href="#alerts">Alerts</a>
+        </nav>
+
+        <section class="tip-panel">
+          <span class="tip-icon" aria-hidden="true">i</span>
+          <p>Use Risk Sentinel AI regularly to stay informed, build resilience and spot opportunities early.</p>
+        </section>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">UK focused risk monitoring</p>
+            <h1>Live risk and opportunity register</h1>
+          </div>
+          <div class="trust-row" aria-label="Product assurances">
+            <span>UK data</span>
+            <span>AI powered</span>
+            <span>Real time</span>
+            <span>Secure</span>
+          </div>
+        </header>
+
+        <section id="search" class="search-panel">
+          <div class="search-copy">
+            <h2>Search for a risk</h2>
+            <p>Enter a keyword, topic or risk. Risk Sentinel AI scans trusted UK data sources and news to produce a working assessment.</p>
+          </div>
+          <form class="search-form" id="risk-search">
+            <label for="risk-query">Risk keyword</label>
+            <div class="search-control">
+              <input id="risk-query" type="search" placeholder="e.g. inflation, supply chain, cyber attack" value="inflation" />
+              <button type="submit">Search</button>
+            </div>
+          </form>
+        </section>
+
+        <section id="summary" class="content-grid">
+          <article class="panel summary-card">
+            <div class="panel-heading">
+              <span>AI Risk Summary</span>
+              <small id="updated-at">Last updated: 12 May 2025</small>
+            </div>
+            <div class="summary-main">
+              <div>
+                <div class="risk-title-row">
+                  <h2 id="risk-title">Inflation</h2>
+                  <span class="pill danger" id="risk-category">Economic Risk</span>
+                </div>
+                <p id="risk-description">High inflation is impacting business costs, consumer spending and profit margins across the UK.</p>
+              </div>
+              <div class="sector-box">
+                <h3>Top affected sectors</h3>
+                <ul id="sectors-list"></ul>
+              </div>
+            </div>
+            <div class="metric-strip">
+              <div class="metric">
+                <span>Likelihood</span>
+                <strong class="high" id="likelihood">High</strong>
+              </div>
+              <div class="metric">
+                <span>Impact</span>
+                <strong class="high" id="impact">High</strong>
+              </div>
+              <div class="metric">
+                <span>Trend</span>
+                <strong id="trend">Worsening</strong>
+              </div>
+            </div>
+          </article>
+
+          <article id="insights" class="panel insight-panel">
+            <div class="panel-heading">
+              <span>Explore Key Insights</span>
+              <small>Drivers, developments, indicators and AI analysis</small>
+            </div>
+            <div class="insight-grid" id="insight-grid"></div>
+          </article>
+
+          <article id="register" class="panel register-panel">
+            <div class="panel-heading">
+              <span>Add To Risk Register</span>
+              <small>Assign ownership, mitigation and status</small>
+            </div>
+            <form id="register-form" class="register-form">
+              <label>
+                Owner
+                <select id="owner">
+                  <option>Jane Smith</option>
+                  <option>Mark Lee</option>
+                  <option>Sarah Brown</option>
+                  <option>Aisha Patel</option>
+                </select>
+              </label>
+              <label>
+                Mitigation / Actions
+                <textarea id="mitigation" rows="3">Review pricing strategy, hedge energy costs and monitor wage pressure.</textarea>
+              </label>
+              <label>
+                Status
+                <select id="status">
+                  <option>Open</option>
+                  <option>In Progress</option>
+                  <option>Monitoring</option>
+                  <option>Closed</option>
+                </select>
+              </label>
+              <label>
+                Next Review
+                <input id="review-date" type="date" value="2026-06-15" />
+              </label>
+              <button type="submit">Add to Register</button>
+            </form>
+          </article>
+
+          <section id="dashboard" class="dashboard-grid" aria-label="Risk dashboard">
+            <article class="panel dashboard-card">
+              <div class="panel-heading"><span>Risk Exposure</span></div>
+              <div class="donut-wrap">
+                <div class="donut" id="risk-donut"><span id="risk-total">0</span><small>Total Risks</small></div>
+                <div class="legend" id="exposure-legend"></div>
+              </div>
+            </article>
+            <article class="panel dashboard-card">
+              <div class="panel-heading"><span>Risks by Category</span></div>
+              <div class="bar-list" id="category-bars"></div>
+            </article>
+            <article class="panel dashboard-card">
+              <div class="panel-heading"><span>Risk Heat Map</span></div>
+              <div class="heatmap" aria-label="Likelihood by impact heat map">
+                <span></span><span>Low</span><span>Medium</span><span>High</span>
+                <span>High</span><b class="yellow"></b><b class="orange"></b><b class="red"></b>
+                <span>Medium</span><b class="green"></b><b class="yellow"></b><b class="orange"></b>
+                <span>Low</span><b class="green"></b><b class="green"></b><b class="yellow"></b>
+              </div>
+            </article>
+          </section>
+
+          <article id="alerts" class="panel alerts-panel">
+            <div class="panel-heading">
+              <span>Set Alerts</span>
+              <small>Stay ahead when tracked risks change</small>
+            </div>
+            <form class="alerts-form">
+              <label class="switch-row">
+                <span>Enable email alerts</span>
+                <input type="checkbox" checked />
+              </label>
+              <fieldset>
+                <legend>Alert me about</legend>
+                <label><input type="checkbox" checked /> New high risks</label>
+                <label><input type="checkbox" checked /> Risk changes</label>
+                <label><input type="checkbox" /> Daily risk summary</label>
+              </fieldset>
+              <label>
+                Frequency
+                <select>
+                  <option>Daily</option>
+                  <option>Weekly</option>
+                  <option>Immediately</option>
+                </select>
+              </label>
+              <label>
+                Email
+                <input type="email" value="you@company.co.uk" />
+              </label>
+              <button type="button" id="save-alerts">Save Alerts</button>
+            </form>
+          </article>
+
+          <article class="panel table-panel">
+            <div class="panel-heading">
+              <span>Risk Register</span>
+              <small id="toast" role="status" aria-live="polite"></small>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Risk</th>
+                    <th>Category</th>
+                    <th>Likelihood</th>
+                    <th>Impact</th>
+                    <th>Owner</th>
+                    <th>Status</th>
+                    <th>Next Review</th>
+                  </tr>
+                </thead>
+                <tbody id="register-body"></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
