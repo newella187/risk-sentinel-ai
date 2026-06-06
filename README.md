@@ -15,11 +15,11 @@ Open `http://127.0.0.1:4173/`.
 This is a static site. In Vercel, import the GitHub repository and use these settings:
 
 - Framework preset: Other
-- Build command: leave empty
+- Build command: empty
 - Output directory: `.`
-- Install command: leave empty
+- Install command: empty
 
-The included `vercel.json` adds clean URLs and a basic security header.
+The included `vercel.json` enforces those no-build settings, adds clean URLs and sets a basic security header.
 
 ## Deploy To GitHub Pages
 
