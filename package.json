@@ -4,6 +4,7 @@
   "private": true,
   "description": "A static Risk Sentinel AI web app for monitoring UK business risks and maintaining a live risk register.",
   "scripts": {
+    "build": "mkdir -p dist && cp index.html styles.css app.js dist/",
     "start": "python3 -m http.server 4173",
     "serve": "python3 -m http.server 4173"
   },
